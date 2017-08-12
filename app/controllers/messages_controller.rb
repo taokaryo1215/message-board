@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:show, :edit, :update. :destloy]
+  before_action :set_message, only: [:show, :edit, :update, :destroy]
   
   def index
     @messages = Message.all
@@ -52,5 +52,5 @@ private
   end
 
   def message_params
-      params.require(:message).permit(:content)
+      params.require(:message).permit(:content, :title)
   end
